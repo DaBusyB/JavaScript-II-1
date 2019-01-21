@@ -100,21 +100,24 @@ console.log("challenge 4", ticketPriceTotal);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
-//sort runners by donation amount
-let sortedDonations = [];
+//sort runners by donation amount without changing original array
+let runnersCopy = runners.slice().sort((a, b) => a.donation - b.donation)
 
-const donationSort  = runners.sort((a, b) => a.donation - b.donation)
-sortedDonations.push(donationSort);
-
-console.log("challenge 5.1", sortedDonations)
+console.log("challenge 5.1", runnersCopy)
 
 // Problem 2
 //reverse the array of runners
+let newArr = []
 
 const reverseRunners = runners.reverse();
-console.log("challenge 5.2", reverseRunners)
+newArr.push(reverseRunners);
+console.log("challenge 5.2", newArr)
 
 // Problem 3
-// 
+//return a list runners names and whether their donation was more than $100
+let donationsList = [];
 
-console.log("challenge 5.3")
+const lowDonations = runners.filter(runner => {
+    donationsList.push(`${runner.first_name} ${runner.donation < 100}`);
+});
+console.log("challenge 5.3", donationsList);
