@@ -62,7 +62,7 @@ function contains(item, list, cb) {
   return cb(check);
 }
 
-constains("Gum", items, trueOrFalse => console.log(trueOrFalse ))
+contains("Gummy", items, trueOrFalse => console.log(trueOrFalse ))
 
 /* STRETCH PROBLEM */
 

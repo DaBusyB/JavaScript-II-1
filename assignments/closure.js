@@ -1,11 +1,20 @@
-// ==== Challenge 1: Write your own closure ====
+  // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
+const nameList = (function() {
+  let names = ["Larry", "Curly", "Moe"];
 
+  return function() {return names.length};
+})
+nameList()
 
 // ==== Challenge 2: Create a counter function ====
-const counter = () => {
+const counter = (function() {
   // Return a function that when invoked increments and returns a counter variable.
-};
+  let counter = 0;
+
+  return function() {counter += 1; return counter}; 
+});
+counter();
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
